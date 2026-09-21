@@ -12,6 +12,7 @@ title = "站点标题"                 # TODO: 改成你的站点名
 theme = "minimal"
 hasCJKLanguage = true              # 中文正文，用于估算阅读时间与摘要
 enableRobotsTXT = true
+buildFuture = true                # 发布未来日期的文章，避免 UTC 时区差导致文章被跳过
 
 [outputs]
   home = ["HTML", "RSS"]
