@@ -48,3 +48,11 @@ enableRobotsTXT = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true               # 允许 Markdown 中混用原生 HTML
+
+    # 保留数学公式原样，供 KaTeX 渲染（需 Hugo 0.128+）
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["$$", "$$"], ["\\[", "\\]"]]
+          inline = [["\\(", "\\)"]]
