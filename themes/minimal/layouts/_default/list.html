@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="container">
+  {{ if .IsHome }}
+    <section class="home-intro">
+      <h1 class="page-title">{{ .Site.Title }}</h1>
+      {{ with .Site.Params.description }}<p class="home-desc">{{ . }}</p>{{ end }}
+    </section>
+
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    <section class="recent-posts">
+      <h2 class="section-title">文章</h2>
+      <ul class="post-list">
+        {{ range $posts.ByDate.Reverse }}
+          <li>
+            <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ else }}
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Content }}<div class="page-content">{{ . }}</div>{{ end }}
+    <ul class="post-list">
+      {{ range .RegularPages.ByDate.Reverse }}
+        <li>
+          <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</div>
+{{ end }}

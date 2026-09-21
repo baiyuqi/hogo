@@ -1,0 +1,12 @@
+name = "minimal"
+license = "MIT"
+licenselink = ""
+description = "极简学术 / 思想文章主题：无侧栏、无小部件，只留阅读。"
+homepage = ""
+tags = ["minimal", "blog", "academic", "chinese", "zh"]
+features = ["blog"]
+min_version = "0.110.0"
+
+[author]
+  name = "you"
+  homepage = ""

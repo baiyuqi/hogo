@@ -1,0 +1,50 @@
+# ============================================================
+# Hugo 站点配置
+# ============================================================
+# 重要：baseURL 需改成你自己的 GitHub Pages 地址。
+#   用户主页仓库： https://<用户名>.github.io/
+#   项目仓库：     https://<用户名>.github.io/<仓库名>/
+# 部署时 GitHub Actions 会用 configure-pages 自动覆盖 baseURL，
+# 这里主要影响本地预览（hugo server 会按此路径提供服务）。
+baseURL = "https://USERNAME.github.io/hogo/"
+languageCode = "zh-cn"
+title = "站点标题"                 # TODO: 改成你的站点名
+theme = "minimal"
+hasCJKLanguage = true              # 中文正文，用于估算阅读时间与摘要
+enableRobotsTXT = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  author = "你的名字"               # TODO: 改成你的名字
+  description = "关于学术、思想与文字的札记。"
+
+# ---- 导航菜单 ----
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 3
+
+[[menu.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true               # 允许 Markdown 中混用原生 HTML

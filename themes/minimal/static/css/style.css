@@ -1,0 +1,202 @@
+/* ============================================================
+   极简学术 / 思想文章主题样式
+   ============================================================ */
+
+:root {
+  --bg: #fdfdfc;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #b30000;
+  --border: #e5e2dc;
+  --maxw: 42rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1b;
+    --text: #e8e6e3;
+    --muted: #9a9893;
+    --accent: #e06464;
+    --border: #33332f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Noto Serif SC", "Songti SC", "SimSun", "Times New Roman", serif;
+  line-height: 1.75;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ---- 页头 ---- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  margin-bottom: 2.5rem;
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.site-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.site-nav a {
+  margin-left: 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.site-nav a.active,
+.site-nav a:hover { color: var(--accent); }
+
+/* ---- 正文 ---- */
+main {
+  min-height: 60vh;
+  padding-bottom: 4rem;
+}
+.page-title,
+.post-title {
+  font-size: 1.9rem;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+.home-desc { color: var(--muted); }
+.section-title { font-size: 1.15rem; margin: 2rem 0 1rem; }
+
+.post-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.post-content { font-size: 1.05rem; }
+.post-content h2 { margin-top: 2.2em; }
+.post-content h3 { margin-top: 1.8em; }
+.post-content p { margin: 1.1em 0; }
+.post-content blockquote {
+  border-left: 3px solid var(--border);
+  margin: 1.5em 0;
+  padding: 0.2em 1em;
+  color: var(--muted);
+}
+.post-content code {
+  font-family: ui-monospace, "SF Mono", Consolas, "Liberation Mono", monospace;
+  font-size: 0.88em;
+  background: var(--border);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+.post-content pre {
+  background: var(--border);
+  padding: 1em;
+  overflow-x: auto;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+.post-content img { max-width: 100%; }
+.post-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+.post-content th,
+.post-content td {
+  border: 1px solid var(--border);
+  padding: 0.4em 0.6em;
+  text-align: left;
+}
+.footnotes {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 3em;
+  padding-top: 1em;
+}
+
+/* ---- 文章列表 ---- */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-list li { margin-bottom: 1.6rem; }
+.post-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-right: 0.8rem;
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+}
+.post-summary {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0.3em 0 0;
+}
+
+/* ---- 标签 ---- */
+.tag-cloud { margin-top: 1.5rem; }
+.tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  margin: 0 0.4em 0.4em 0;
+}
+.tag:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.tag-count { font-size: 0.75em; opacity: 0.6; }
+.post-footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+
+/* ---- 目录 ---- */
+.toc {
+  background: var(--border);
+  padding: 0.8em 1em;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.toc summary { cursor: pointer; color: var(--muted); }
+.toc ul { list-style: none; padding-left: 1em; margin: 0.3em 0; }
+.toc > ul { padding-left: 0; }
+
+/* ---- 页脚 ---- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.site-footer a { color: var(--muted); }
