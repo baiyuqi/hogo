@@ -30,7 +30,7 @@ defaultContentLanguageInSubdir = false  # 默认语言不加 /zh/ 前缀，英�
   weight = 1
   title = "我思故我在"
   [languages.zh.params]
-    author = "你的名字"               # TODO: 改成你的名字
+    author = "知白"
     description = "关于学术、思想与文字的札记。"
   [[languages.zh.menu.main]]
     name = "首页"
@@ -57,7 +57,7 @@ defaultContentLanguageInSubdir = false  # 默认语言不加 /zh/ 前缀，英�
   weight = 2
   title = "Cogito Ergo Sum"
   [languages.en.params]
-    author = "Your Name"             # TODO: 改成你的英文名
+    author = "Zhibai"
     description = "Notes on academia, ideas, and writing."
   [[languages.en.menu.main]]
     name = "Home"
