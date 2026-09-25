@@ -200,3 +200,10 @@ main {
   font-size: 0.85rem;
 }
 .site-footer a { color: var(--muted); }
+
+/* ---- 翻译链接 ---- */
+.translation-link {
+  font-size: 0.9rem;
+  margin: -0.8rem 0 2rem;
+}
+.translation-link a { color: var(--accent); }

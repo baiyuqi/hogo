@@ -7,6 +7,11 @@
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
         <span> · 约 {{ .ReadingTime }} 分钟</span>
       </div>
+      {{ if .Params.english_url }}
+        <p class="translation-link"><a href="{{ .Params.english_url | relURL }}">Read in English →</a></p>
+      {{ else if .Params.chinese_url }}
+        <p class="translation-link"><a href="{{ .Params.chinese_url | relURL }}">中文版 →</a></p>
+      {{ end }}
     </header>
 
     {{ if .Params.toc }}
