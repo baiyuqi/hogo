@@ -28,7 +28,7 @@ defaultContentLanguageInSubdir = false  # 默认语言不加 /zh/ 前缀，英�
   locale = "zh-cn"
   contentDir = "content/zh"
   weight = 1
-  title = "站点标题"                 # TODO: 改成你的站点名
+  title = "我思故我在"
   [languages.zh.params]
     author = "你的名字"               # TODO: 改成你的名字
     description = "关于学术、思想与文字的札记。"
@@ -55,7 +55,7 @@ defaultContentLanguageInSubdir = false  # 默认语言不加 /zh/ 前缀，英�
   locale = "en"
   contentDir = "content/en"
   weight = 2
-  title = "Site Title"               # TODO: 改成你的英文站点名
+  title = "Cogito Ergo Sum"
   [languages.en.params]
     author = "Your Name"             # TODO: 改成你的英文名
     description = "Notes on academia, ideas, and writing."
