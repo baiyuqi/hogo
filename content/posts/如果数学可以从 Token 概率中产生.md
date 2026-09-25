@@ -3,6 +3,7 @@ title: "如果数学可以从 Token 概率中产生"
 date: 2026-09-22
 draft: false
 tags: ["随笔"]
+english_url: "/posts/if-mathematics-can-emerge-from-token-probabilities/"
 ---
 LLM 的本质究竟是什么？从最底层看，它只是根据已有 token 序列预测下一个 token 的条件概率，并通过这种概率生成过程不断产生文本。然而，我们真正观察到的却远不止 token：数学、逻辑、程序、因果关系等高度抽象的结构，都可以稳定地出现在这种生成机制之上。
 
