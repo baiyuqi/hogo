@@ -3,9 +3,23 @@
     <a class="site-title" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
     <nav class="site-nav">
       {{ $current := .RelPermalink }}
+      {{ $langHome := .Site.Home.RelPermalink }}
+      {{ $defaultHome := (index hugo.Sites 0).Home.RelPermalink }}
       {{ range .Site.Menus.main }}
-        {{ $url := .URL | relURL }}
+        {{ $path := strings.TrimPrefix $defaultHome .URL }}
+        {{ $url := printf "%s%s" $langHome $path }}
         <a href="{{ $url }}" class="{{ if eq $current $url }}active{{ end }}">{{ .Name }}</a>
+      {{ end }}
+      {{ if .IsTranslated }}
+        {{ range .Translations }}
+          <a href="{{ .RelPermalink }}" class="lang-link">{{ .Language.Label }}</a>
+        {{ end }}
+      {{ else }}
+        {{ range hugo.Sites }}
+          {{ if ne .Language.Lang $.Site.Language.Lang }}
+            <a href="{{ .Home.RelPermalink }}" class="lang-link">{{ .Language.Label }}</a>
+          {{ end }}
+        {{ end }}
       {{ end }}
     </nav>
   </div>

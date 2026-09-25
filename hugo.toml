@@ -7,12 +7,14 @@
 # 部署时 GitHub Actions 会用 configure-pages 自动覆盖 baseURL，
 # 这里主要影响本地预览（hugo server 会按此路径提供服务）。
 baseURL = "https://USERNAME.github.io/hogo/"
-languageCode = "zh-cn"
-title = "站点标题"                 # TODO: 改成你的站点名
 theme = "minimal"
 hasCJKLanguage = true              # 中文正文，用于估算阅读时间与摘要
 enableRobotsTXT = true
 buildFuture = true                # 发布未来日期的文章，避免 UTC 时区差导致文章被跳过
+
+# ---- 多语言 ----
+defaultContentLanguage = "zh"         # 默认语言：中文
+defaultContentLanguageInSubdir = false  # 默认语言不加 /zh/ 前缀，英文加 /en/ 前缀
 
 [outputs]
   home = ["HTML", "RSS"]
@@ -20,30 +22,59 @@ buildFuture = true                # 发布未来日期的文章，避免 UTC 时
 [taxonomies]
   tag = "tags"
 
-[params]
-  author = "你的名字"               # TODO: 改成你的名字
-  description = "关于学术、思想与文字的札记。"
-
-# ---- 导航菜单 ----
-[[menu.main]]
-  name = "首页"
-  url = "/"
+# ---- 中文站点 ----
+[languages.zh]
+  label = "中文"
+  locale = "zh-cn"
+  contentDir = "content/zh"
   weight = 1
+  title = "站点标题"                 # TODO: 改成你的站点名
+  [languages.zh.params]
+    author = "你的名字"               # TODO: 改成你的名字
+    description = "关于学术、思想与文字的札记。"
+  [[languages.zh.menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[languages.zh.menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[languages.zh.menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+  [[languages.zh.menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 4
 
-[[menu.main]]
-  name = "文章"
-  url = "/posts/"
+# ---- 英文站点 ----
+[languages.en]
+  label = "English"
+  locale = "en"
+  contentDir = "content/en"
   weight = 2
-
-[[menu.main]]
-  name = "标签"
-  url = "/tags/"
-  weight = 3
-
-[[menu.main]]
-  name = "关于"
-  url = "/about/"
-  weight = 4
+  title = "Site Title"               # TODO: 改成你的英文站点名
+  [languages.en.params]
+    author = "Your Name"             # TODO: 改成你的英文名
+    description = "Notes on academia, ideas, and writing."
+  [[languages.en.menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[languages.en.menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+  [[languages.en.menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+  [[languages.en.menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
 
 [markup]
   [markup.goldmark]

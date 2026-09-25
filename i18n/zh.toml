@@ -1,0 +1,11 @@
+[posts]
+other = "文章"
+
+[readingTime]
+other = "约 {{ . }} 分钟"
+
+[toc]
+other = "目录"
+
+[poweredBy]
+other = '由 <a href="https://gohugo.io">Hugo</a> 驱动'

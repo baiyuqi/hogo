@@ -4,7 +4,7 @@ date: 2026-09-22
 draft: false
 tags: ["essay"]
 toc: true
-chinese_url: "posts/如果数学可以从-token-概率中产生/"
+translationKey: "mathematics-token-probabilities"
 ---
 
 What, fundamentally, is an LLM? At the lowest level, it only predicts the conditional probability of the next token given the existing token sequence, and continuously produces text through this probabilistic generation process. Yet what we actually observe extends far beyond tokens: highly abstract structures such as mathematics, logic, programs, and causal relations can all appear stably on top of this generation mechanism.

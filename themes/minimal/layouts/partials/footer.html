@@ -1,5 +1,5 @@
 <footer class="site-footer">
   <div class="container">
-    <p>© {{ now.Format "2006" }} {{ .Site.Params.author | default .Site.Title }} · 由 <a href="https://gohugo.io">Hugo</a> 驱动</p>
+    <p>© {{ now.Format "2006" }} {{ .Site.Params.author | default .Site.Title }} · {{ i18n "poweredBy" | safeHTML }}</p>
   </div>
 </footer>
