@@ -12,9 +12,9 @@
       <ul class="post-list">
         {{ range $posts.ByDate.Reverse }}
           <li>
-            <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+            <span class="post-date">{{ .Date | time.Format ":date_long" }}</span>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+            {{ with .Summary }}<p class="post-summary">{{ . | plainify | truncate 110 }}</p>{{ end }}
           </li>
         {{ end }}
       </ul>
@@ -25,9 +25,9 @@
     <ul class="post-list">
       {{ range .RegularPages.ByDate.Reverse }}
         <li>
-          <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+          <span class="post-date">{{ .Date | time.Format ":date_long" }}</span>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ with .Summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+          {{ with .Summary }}<p class="post-summary">{{ . | plainify | truncate 110 }}</p>{{ end }}
         </li>
       {{ end }}
     </ul>
